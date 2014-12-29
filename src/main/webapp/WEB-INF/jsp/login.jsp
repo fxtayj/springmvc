@@ -4,10 +4,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Login 1</title>
+<title>用户登录</title>
 </head>
 <body>
-<p>get请求返回的Login 1！</p>
-<p>欢淫您 ${user}</p>
+<form action="/user/login.do" method="post">
+<p>用户名：</p><input name="userName">
+<p>密码：</p><input name="password">
+<button type="submit"></button>
+</form>
 </body>
 </html>

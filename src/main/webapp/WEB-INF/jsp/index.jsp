@@ -8,5 +8,6 @@
 </head>
 <body>
 <h1>欢迎你！！！</h1>
+<a href="user/login.do">登录</a>
 </body>
 </html>
