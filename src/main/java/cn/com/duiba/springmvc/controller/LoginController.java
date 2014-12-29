@@ -29,10 +29,4 @@ public class LoginController {
         return "login2";
     }
     
-    @RequestMapping(value = "login", method = RequestMethod.POST)
-    public String testParam(HttpServletRequest request, HttpServletResponse response, HttpSession session) {
-    	String username = request.getParameter("username");
-    	System.out.println(username);
-    	return null;
-    }
 }
