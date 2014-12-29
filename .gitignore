@@ -1,2 +1,2 @@
 #忽略生成的.class 编译文件
-*.class
+/target
