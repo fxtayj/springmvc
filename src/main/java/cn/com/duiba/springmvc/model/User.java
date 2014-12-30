@@ -5,31 +5,27 @@ package cn.com.duiba.springmvc.model;
  */
 public class User {
 
-	private int id;
-	private int state;
-	private String nickname;
-
-	public int getId() {
+	private long id;
+	private String username;
+	private String password;
+	
+	public long getId() {
 		return id;
 	}
-
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
-
-	public int getState() {
-		return state;
+	public String getUsername() {
+		return username;
 	}
-
-	public void setState(int state) {
-		this.state = state;
+	public void setUsername(String username) {
+		this.username = username;
 	}
-
-	public String getNickname() {
-		return nickname;
+	public String getPassword() {
+		return password;
 	}
-
-	public void setNickname(String nickname) {
-		this.nickname = nickname;
+	public void setPassword(String password) {
+		this.password = password;
 	}
+	
 }

@@ -1,10 +1,14 @@
 package cn.com.duiba.springmvc.controller;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+
+import cn.com.duiba.springmvc.model.User;
 
 @Controller
 @RequestMapping("/user")
@@ -17,14 +21,22 @@ public class UserController {
 	}
 
 	// 使用POST请求的方法处理业务逻辑
-	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	@RequestMapping(value = "/login")
 	public String login2(HttpServletRequest request) {
 		System.out.println("login的post方法提交");
-//		String username = request.getParameter("username").trim();
-//		String password = request.getParameter("password").trim();
-//		System.out.println(username);
-//		System.out.println(password);
+		// String username = request.getParameter("username").trim();
+		// String password = request.getParameter("password").trim();
+		// System.out.println(username);
+		// System.out.println(password);
 		return "login2";
+	}
+
+	@RequestMapping(value = "/login" , method = RequestMethod.POST)
+	public ModelAndView login(HttpServletRequest request, HttpServletResponse response, User user) {
+		String username = user.getUsername();
+		System.out.println("用户："+username+"登录成功！");
+		ModelAndView mv = new ModelAndView("redirect:/login2/index/welcome.do", "user","LOGIN SUCCESS, " + username);
+		return mv;
 	}
 
 }
