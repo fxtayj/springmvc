@@ -35,7 +35,7 @@ public class UserController {
 	public ModelAndView login(HttpServletRequest request, HttpServletResponse response, User user) {
 		String username = user.getUsername();
 		System.out.println("用户："+username+"登录成功！");
-		ModelAndView mv = new ModelAndView("redirect:/login2/index/welcome.do", "user","LOGIN SUCCESS, " + username);
+		ModelAndView mv = new ModelAndView("redirect:/login2/index/greeting.do", "username","LOGIN SUCCESS, " + username);
 		return mv;
 	}
 

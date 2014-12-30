@@ -16,16 +16,9 @@ public class IndexController {
 		return "index";
 	}
 
-	@RequestMapping("/welcome/{username}")
-	// 支持RESTful风格，带参数。
-	public String index(@PathVariable("username") String username) {
-		System.out.println(username);
-		return "index";
-	}
-	
 	@RequestMapping("/greeting")
-    public String greeting(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
-        model.addAttribute("name", name);
+    public String greeting(@RequestParam(value="username", required=false, defaultValue="SpringMVC") String username, Model model) {
+        model.addAttribute("username", username);
         return "greeting";
     }
 }
