@@ -33,9 +33,9 @@ public class UserController {
 
 	@RequestMapping(value = "/login" , method = RequestMethod.POST)
 	public ModelAndView login(HttpServletRequest request, HttpServletResponse response, User user) {
-		String username = user.getUsername();
-		System.out.println("用户："+username+"登录成功！");
-		ModelAndView mv = new ModelAndView("redirect:/login2/index/greeting.do", "username","LOGIN SUCCESS, " + username);
+		String username = user.getName();
+		ModelAndView mv = new ModelAndView("/index/greeting.do", "username", username);
+		mv.addObject("hello", "hello world!");
 		return mv;
 	}
 

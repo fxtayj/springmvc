@@ -23,7 +23,7 @@ private UserService userService;
     @Test
     public void addUser(){
         User user = new User();
-        user.setUsername("你好");
+        user.setName("你好");
         user.setPassword("15a4s56df4a6");
         System.out.println(userService.insertUser(user));
     }
